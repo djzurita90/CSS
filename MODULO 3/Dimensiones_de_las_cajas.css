@@ -1,0 +1,50 @@
+/* =>> DIMENSIONES DE LAS CAJAS 
+
+Como se Calcula?
+
+> Sin dimensiones declaradas:
+Alto(height):  Contenido + padding + border
+Ancho(width):  Contenido + padding + border
+
+> Con Dimensiones Declaradas
+Alto(height):  height + padding + border
+Ancho(width):  width + padding + border
+*/
+
+.caja{
+  width: 300px;
+  height: 200px;
+  border: 2px solid red;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+/* este proceso puede traer problemas ya que todas las
+medidas se suman y puede descuadrar las medidas exactas
+lo que conllevaba a realizar calculos para generar datos exactos,
+como tal ahora existe una propiedad box-sizing que realiza estos
+calculos por nosotros dejando las medidas exactas. */
+
+.box-sizing{
+  width: 300px;
+  height: 200px;
+  border: 2px solid red;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* IMPORTANTE: LOS NAVEGADORES POR DEFECTO TRABAJAN
+CON box-sizing: content-box; Y ESO GENERA ESA SUMA DE
+DIMENSIONES QUE SUELEN CREAR MAS TAMAÑO DEL DESEADO */
+
+/* EJEMPLO DE RESET DE box-sizing */
+
+/* 
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+} 
+
+*/

@@ -1,0 +1,41 @@
+/* VIEWPORT: Simboliza todo el espacio disponibles.  */
+
+/* 
+Elementos Block (Bloque):
+  Son aquellos que ocupan todo el espacio disponibles, sin importar
+  que su contenido llegue o no a todo el espacio disponibles.
+*/
+
+/* 
+Elementos Inline (En Linea):
+  Son Aquellos que Ocupan un espacio segun su contenido, como tal
+  estos elementos no poseen ciertas propiedades que poseen los
+  elementos en bloque como por ejemplo: width y height, entre otros.
+*/
+
+/* Block */
+h1{
+  background: red;
+  height: 120px;
+}
+
+/* Inline */
+a{
+  background: orange;
+  /* No Poseen Height, es decir; no funciona agregarle height */
+  height: 120px;
+  width: 300px;
+}
+
+/* 
+Inline Block (Intermedio):
+Simbiliza que el elemento seguira siento inline, pero con la variante
+de que va a heredar las propiedades que tienen los bloques.
+*/
+
+span{
+  background: seagreen;
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+}

@@ -1,0 +1,144 @@
+/* 
+  Se deben Tomar en cuenta varios elementos importantes para conocer CSS::
+
+  * Sintaxis
+  * Selectores
+  * Especificidad
+  * Cascada
+  * Herencia
+
+  =>> Un Nivel mas Avanzado::
+
+  * Box Model
+  * Position
+  * Flexbox
+
+*/
+
+/* ==> SINTAXYS CSS3 */
+
+/* ==> Guia para la sintaxis: http://apps.workflower.fi/vocabs/css/es */
+
+
+/* 
+
+==> SELECTORES::
+  Hace referencia a los elementos HTML que seran afectados, existen varios
+  tipos de selectores:
+
+  * Selectores de Etiqueta.
+
+    body, h2, span, figure, div, etc...
+
+  * Selectores descendientes.
+
+    body
+      span
+    
+    div > ul li
+
+*/
+
+/* 
+
+==> ESPECIFICIDAD ::
+  Hace referencia a una buena practica de no utilizar tantos selectores decendientes,
+  
+  ERROR: 'body header div h1 span'.
+  CORRECTO: '.header-span' ó en otro caso 'header span'.
+
+*/
+
+
+/* 
+
+==> TIPOS DE DATOS::
+
+* Colores:
+  - palabras claves: red, yellow, green, etc.
+  - funciones: hsl(), rgb(), rgba().
+  - Hexadecimales: #fff, #000000.
+
+* Unidades de Tiempo:
+  - Segundos: 1s, .5s.
+
+* Grados:
+  - rotaciones: rotate(100deg), rotate(0.5turn).
+
+* Numericos:
+  - Calculos: calc(10px + 20px), calc(100% - 50px).
+
+* Unidades de Medicion:
+  - Pixeles: 30px, 1234px.
+  - Porcentaje: 20%, 100%. 
+  - Enteros: 1, 2, 30.
+  - String: content: 'Hola Mundo';
+  - Centimetros: 10cm, 100cm.
+  - Pulgadas: 30in, 200in.
+  - Milimetros: 40mm, 200mm.
+  - Picas: 20pc, 123pc.
+  - Puntos: 1pt, 20pt.
+  - Ancho del Glifo: 60ch, 120ch.
+  - Tamaño de la Fuente Actual: 2em, 40em.
+  - Altura de la fuente actual: 39ex, 2ex.
+  - Gradilla: 20gd, 2gd.
+  - Tamaño de la fuente Raiz: 2rem, 120rem.
+  - Altura del dispositivo: 10vh, 100vh.
+  - Anchura del dispositivo: 10vw, 100vw.
+  - Menor de los Valores: 20vmin, 100vmin.
+  - Mayor de los Valores: 20wmax, 100wmax. 
+
+*/
+
+/* 
+
+==> VARIABLES::
+  CSS ya dispone de variables, se establecen con el dobre guion (--),
+  Ademas se utiliza la funcion var():
+
+  h1{
+    --color: red;
+    background: var(--color);
+  }
+
+  !importante: estas variables solo trabajan en el bloque donde se crean
+  y en los elementos hijos, ojo no son herencias!!!.
+
+  h1{
+    background: var(--color);
+  }
+
+  body{
+    --color: red;
+    background: var(--color);
+  }
+
+*/
+
+/* 
+
+==> ESTILOS DE TEXTOS::
+  - color
+  - font-size
+  - font-family
+  - text-align
+  - line-height
+
+*/
+
+
+/* 
+
+==> ESTILOS POR DEFECTO DE LOS NAVEGADORES::
+  Todos los navegadores poseen estilos por defecto. podemos resetear estos estilos
+  afectando los elementos que sean necesarios, al igual que podemos utilizar el
+  selector general (*).
+
+  *{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+
+*/

@@ -1,0 +1,217 @@
+/* 
+==> ::-- SELECTORES --::
+*/
+
+/*
+=> Selectores Simples: 
+  Son aquellos formados por una sola palabra.
+*/
+
+/*
+> Selectores de Tipo (etiqueta html):
+    ul, body, article, section, aside, etc.
+    !importante estos selectores no son recomendables
+    usarlos, salvo en los estilos bases(modernize.css, reset.css, etc) 
+*/
+
+aside{
+  background: red;
+}
+
+li{
+  background: blue;
+  color: white;
+  font-size: 2rem;
+}
+
+/*
+> Selectores de ID (No es Recomendable Usarlos):
+    #id-elemento 
+*/
+
+#seccion{
+  background: pink;
+}
+
+#parrafo{
+  background: orange;
+  font-size: 2rem;
+  text-align: justify;
+}
+
+/*
+> Selectores de Clases (Recomendable):
+    !importante: crear clases lo mas semanticas posibles,
+    con significado acorde a los elementos y su funcionalidad.
+    .clase-elemento 
+*/
+
+.menu{
+  background: black;
+}
+
+.menu-item{
+  background: yellow;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 2rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* 
+==> ::-- ESPECIFICIDAD (Especifico) --::
+  Se refiere a un algoritmo de CSS por el cual se
+  resuelven los conflictos de estilos.
+
+  Selectores de Tipo (type)     Prioridad (1)
+  Selectores de Clases (class)  Prioridad (10)
+  Selectores de Id (id)         Prioridad (100)
+  Estilos en Linea (inline)     Prioridad (1000)
+  !important (Mala Practica)    Prioridad (10000)
+
+*/
+
+
+/*
+=> Selectores Compuestos: 
+  Son aquellos que se componen por mas de una palabra.
+*/
+
+/*
+> Selectores Descendientes:
+  Ancestro Descendiente.
+*/
+
+ul span{
+  background: salmon;
+  text-transform: uppercase;
+  color: steelblue;
+}
+
+/*
+> Selectores Hijos Directos:
+  Estos ya no son elementos descendientes, sino hijos
+  directo al elemento. Simbolo (>)
+*/
+
+div > p{
+  background: navy;
+  color: white;
+}
+
+/*
+> Selector Hermano Siguiente (adyacente):
+  Se utiliza para seleccionar al elemento siguiente.
+*/
+
+h2 + article{
+  background: lime;
+}
+
+/*
+> Selectores Hermanos Siguientes:
+  Se utiliza para seleccionar todos los elementos
+  hermanos siguientes.
+*/
+
+h3 ~ article{
+  background: mediumvioletred;
+  font-size: 3rem;
+}
+
+/*
+> Combinacion de selectores:
+  Es posible combinar selectores en CSS.
+*/
+
+h4.first{
+  color: blue;
+}
+
+/*
+=> Selectores de Atributos: 
+  Son aquellos que usan corchetes para indicar el atributo.
+*/
+
+[href]{
+  background: lightgrey;
+  color: tomato;
+}
+
+[href="https://facebook.com"]{
+  color: yellow;
+  background: black;
+}
+
+[data-contenido]{
+  background: blue;
+  color: orange;
+}
+
+[title][data-id]{
+  background: lawngreen;
+  color: red;
+}
+
+a[href]{
+  font-size: 3rem;
+}
+
+/*
+> Comodin ^  (Comienza con):
+*/
+
+[title^="Escuela"]{
+  background: indianred;
+  font-size: 3rem;
+}
+
+[class^="menu-"]{
+  background: purple;
+  margin-top: 40px;
+}
+
+/*
+> Comodin $  (Termina en):
+*/
+
+[data-termino$="Mundo"]{
+  background: yellow;
+}
+
+[href$="pdf"]{
+  background: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/699434-icon-70-document-file-pdf-128.png)no-repeat left / contain;
+  border: 2px solid blue;
+  padding-left: 60px;
+}
+
+/*
+> Comodin *  (Contiene):
+*/
+
+[href*='sea']{
+  background: green;
+  color: white;
+}
+
+/*
+> Adicional i  (Key insentive):
+  Significa que busca el string tanco en mayuscula como
+  en minuscula
+*/
+
+[title*='cUlO' i]{
+  background: indigo;
+  color: red;
+}
+
+/*
+> Selectores Agrupados:
+*/
+
+footer h6, footer p{
+  background: red;
+  color: white;
+}

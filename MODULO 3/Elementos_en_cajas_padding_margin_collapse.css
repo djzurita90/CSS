@@ -1,0 +1,51 @@
+/* ELEMENTOS DEL MODELO DE CAJAS */
+
+/* 
+  => Internos::
+    - Contenido.
+    - Padding.
+    - Border
+
+  => Externos::
+    - Margin
+*/
+
+.elemento{
+  background: yellow;
+  display: inline-block;
+  padding: 50px;
+  margin: 20px;
+}
+
+/* IMPORTANTE: LOS MARGENES EN VERTICAL NO SE SUMAN,
+SOLO SE COLAPSAN Y SE UTILIZA EL VALOR MAYOR ENTRE LOS
+ELEMENTOS... */
+
+.colapse{
+  background: orange;
+  margin-bottom: 150px;
+}
+
+.colapse:nth-child(4){
+  background: purple;
+  margin-top: 200px;
+}
+
+/* IMPORTANTE: ESTE ES OTRO DE LOS ERRORES MAS COMUNES
+O DOLES DE CABEZAS DE LOS DESARROLLADORES CON CSS, QUE
+EN ESTE CASO EL H1 POSEE UN MARGIN POR DEFECTO SEGUN EL
+NAVEGADOR, PERO ESTE MARGIN NO AFECTA DENTRO DEL ELEMENTO PADRE
+SINO POR FUERA. Y ES POR ESO QUE EL TERMINO DE COLAPSO DE MARGENES
+EN VERTICAL. EN ESTE CASO EL H1 TIENE  UN MARGIN DE 1EM Y COMO COLAPSA
+CON EL DEL ARTICLE QUE NO POSEE, ENTONCES ES POR ELLO QUE EL ARTICLE
+OBTINE ESTE MARGIN HEREDADO DEL H1. Y POR ESO ESA ESPECIE DE ILUSION
+OPTICA. ES DECIR COLAPSARON SUS MARGENES EN UNO SOLO.*/
+
+article{
+  background: red;
+  margin: 0;
+}
+
+body{
+  background: steelblue;
+}

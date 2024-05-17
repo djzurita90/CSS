@@ -1,0 +1,240 @@
+/* 
+==> ::-- PSEUDO CLASES --::
+  Son selectores dinamicos, que responden al contexto,
+  a la interaccion del usuario o a algunas propiedades de
+  los elementos. Las Pseudo clases de indican con dos puntos (:)
+*/
+
+/* 
+=> Pseudo Clases para los Enlaces
+*/
+
+a{
+  display: inline-block;
+  background: red;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  background: blue;
+}
+
+a:active{
+  background: black;
+  transform: scale(0.7);
+}
+
+a:visited{
+  background: orange;
+}
+
+/* 
+=> Pseudo Clases Target
+  Son aquellas que indican que un elemento ha sido alcanzado con un
+  marcador.
+*/
+
+nav{
+  background: red;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+}
+nav a{
+  color: white;
+  display: block;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+}
+#parrafo{
+  margin-top: 50em;
+  margin-bottom: 50em;
+}
+
+#parrafo:target{
+  padding-top: 70px;
+}
+
+/* 
+=> Pseudo Clases Root
+  Esta Pseudo clase simboliza la raiz de todo, 
+  esta casi nunca se usa. Root es muy similar al 
+  alcance de html.
+*/
+
+:root{
+  background: slateblue;
+}
+
+/* 
+=> Pseudo Clases Empty
+  Indica un elemento vacio.
+*/
+
+.parrafo .item{
+  background: red;
+  padding: 30px 10px;
+}
+
+.item:empty{
+  display: none;
+}
+
+/* 
+=> Pseudo Clases :not(selector)
+  Esta Pseudo clase es una funcion que recibe un selector,
+  como tal recibe cualquier selector. exepto el mismo :not()
+  de resto todos los demas selectores los recibe.
+*/
+
+.item:not(:empty){
+  font-size: 2em;
+}
+
+/* 
+=> Pseudo Clases de Formularios
+*/
+
+/* 
+> Focus: 
+  Para cuando un elemento fue enfocado con el cursor.
+*/
+
+.focus:focus{
+  background: yellow;
+}
+
+/* 
+> Enable / Disabled 
+  Son para elementos activos o inactivos. Todos los input
+  por defecto son Enable.
+*/
+
+input:disabled{
+  background: gray;
+}
+
+/* 
+> Checked: 
+  Sirven para indicar un elemento que ha sido seleccionado. input radio,
+  input checkbox o un select, etc.
+*/
+
+.elegir:checked + label{
+  background: orange;
+  font-size: 2rem;
+  color: blue;
+}
+
+/* 
+> Required / Optional: 
+  require: es cuando un elemento es requerido.
+  optional: es cuando un elemento es opcional.
+*/
+
+input:optional{
+  border: 2px solid red;
+}
+
+input:required{
+  border: 2px solid green;
+}
+
+/* 
+> Valid / Invalid: 
+  Valid: es cuando un elemento es Valido, es decir; si elemento
+  es de tipo email y esta valido.
+  Invalid: es cuando un elemento es invalido, es decir; cuando un
+  input de tipo email no es correcto.
+*/
+
+input:valid{
+  background: red;
+  color: white;
+}
+
+input:invalid{
+  background: green;
+  color: white;
+}
+
+/* 
+> in-range / out-range: 
+*/
+
+input:in-range{
+  background: blue;
+}
+
+input:out-of-range{
+  background: yellow;
+}
+
+/* 
+=> Pseudo Clases Child
+  Sirven para encontrar hijos u elementos especificos dentro de
+  un contenedor padre.
+*/
+
+/* odd = Impares */
+section p:nth-child(odd){
+  background: darkorange;
+}
+
+/* even = Pares */
+section p:nth-child(even){
+  background: teal;
+}
+
+section p:nth-child(3n){
+  background: red;
+}
+
+section p:nth-child(3n+1){
+  background: white;
+}
+
+/* section p:nth-child(n+4){
+  background: gold;
+} */
+
+/* section p:nth-last-child(n+4){
+  background: gold;
+}  */
+
+section p:nth-child(3){
+  background: greenyellow;
+}
+
+section aside:nth-of-type(2){
+  background: black;
+}
+
+section p:first-child{
+  background: saddlebrown;
+}
+
+section p:last-child{
+  background: rebeccapurple;
+}
+
+/* Selecciona un unico Hijo, esto funciona cuando literalmente
+hay un solo hijo dentro del contenedor padre */
+article span:only-child{
+  background: dimgrey;
+}
+
+/* 
+Equivalencia de child con type: 
+
+:first-child --------- :first-of-type
+:last-child ---------- :last-of-type
+:nth-child() --------- :nth-of-type()
+:nth-last-child() ---- :nth-last-of-type()
+
+*/
+
+/* Selectores por niveles: https://drafts.csswg.org/selectors-4/Overview.html  */
